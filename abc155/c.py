@@ -1,12 +1,17 @@
 from collections import Counter
-n = int(input())
-a = [input() for i in range(n)]
 
-c = Counter(a)
-d = c.most_common()
-ans = []
-for i in c.items():
-    if i[1] == d[0][1]:
-        ans.append(i[0])
-for i in sorted(ans):
-    print(i)
+
+def main():
+    N = int(input())
+    A = [input() for _ in range(N)]
+
+    c = Counter(A)
+    max_num = c.most_common()[0][1]
+    ANS = [i[0] for i in c.items() if i[1] == max_num]
+    ANS.sort()
+    for ans in ANS:
+        print(ans)
+
+
+if __name__ == '__main__':
+    main()
